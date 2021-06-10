@@ -9,4 +9,6 @@ class Article < ApplicationRecord
   validates :title, presence: true, length: { in: 8..100 }
   validates :text, presence: true, length: { minimum: 30 }
   validates :image, presence: true
+
+  has_one_attached :image
 end
