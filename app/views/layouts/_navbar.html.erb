@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark">
+<nav class="navbar navbar-expand navbar">
   <div class="container-fluid">
     <%= link_to root_path, style: "width: 100px" do %>
       <%= image_tag asset_path("logo.png") %>
@@ -22,7 +22,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-            Welcome, <%= current_user.name.capitalize %>!
+            <span class="nav-link">Welcome, <%= current_user.name.capitalize %>!</span>
           </li>
           <li class="nav-item">
             <%= link_to "Log out", logout_path, class: "nav-link", method: :delete %>
