@@ -11,4 +11,15 @@ class Article < ApplicationRecord
   validates :image, presence: true
 
   has_one_attached :image
+
+  scope :most_popular, lambda {
+    if Vote.any?
+      joins(:votes)
+      .group(:id)
+      .order('COUNT(votes.article_id) desc')
+      .first
+    else
+      order('created_at desc').first
+    end
+  }
 end

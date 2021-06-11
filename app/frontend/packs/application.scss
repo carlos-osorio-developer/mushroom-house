@@ -2,5 +2,13 @@ h1 {
     text-decoration: underline;  
 }  
 
+body > div.container-fluid.featured-art {   
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.8) 100%); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: color-burn;
+}
+
 // Import Bootstrap v5  
 @import "~bootstrap/scss/bootstrap";  
