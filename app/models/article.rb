@@ -2,9 +2,9 @@ class Article < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
   has_many :listings, foreign_key: :article_id
-  has_many :categories, through: :listings
+  has_many :categories, through: :listings, dependent: :destroy
   
-  has_many :votes
+  has_many :votes, dependent: :destroy
 
   validates :title, presence: true, length: { in: 8..100 }
   validates :text, presence: true, length: { minimum: 30 }
