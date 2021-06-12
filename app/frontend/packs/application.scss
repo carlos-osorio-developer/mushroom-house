@@ -1,13 +1,72 @@
-h1 {  
-    text-decoration: underline;  
+// font-family: 'Poppins', sans-serif;
+nav {  
+    height: 80px;  
+    font-family: 'Heebo', sans-serif;
 }  
 
-body > div.container-fluid.featured-art {   
+a.nav-link,
+span.nav-link {
+    color:rgb(144, 144, 144);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+a.nav-link:hover {
+    color: orangered;
+}
+
+.logo {
+    width: 80%;
+}
+
+.featured-art {   
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.8) 100%); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-blend-mode: color-burn;
+    height: 350px;
+}
+
+.cat-title {
+    font-family: 'Heebo', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    width: auto;
+    border-bottom: 2px solid yellow;
+}
+
+.cat-title:hover {
+    color: orangered;
+}
+
+.art-title {
+    font-family: 'Heebo', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px; 
+}
+
+.featured-art .art-title {
+    color: orangered;
+}
+
+.featured-art .art-title:hover {
+    color: white;
+}
+
+.art-descr {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.art-descr:hover {
+    color: gray;
 }
 
 // Import Bootstrap v5  

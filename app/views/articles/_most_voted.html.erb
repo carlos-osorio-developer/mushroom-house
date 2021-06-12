@@ -1,5 +1,11 @@
 <% @most_popular = Article.most_popular %>
-<div class="container-fluid featured-art" style="background-image: url(<%= rails_blob_url(@most_popular.image) %>),
-    linear-gradient(351deg, rgba(0,0,0,1) 0%, rgba(130,130,130,0.3981967787114846) 30%);
-    ; height: 600px"> 
+<div class="container-fluid featured-art d-flex flex-column justify-content-between" style="background-image: url(<%= rails_blob_url(@most_popular.image) %>),
+    linear-gradient(351deg, rgba(0,0,0,1) 0%, rgba(130,130,130,0.3981967787114846) 30%);"> 
+    <div class="w-auto my-3">
+        <%= link_to 'POPULAR', article_path(@most_popular), class: 'cat-title' %>
+    </div>
+    <div class="justify-self-end pb-2">
+        <p class="ps-2"><%= link_to @most_popular.title, article_path(@most_popular), class: 'art-title' %></p>
+        <span><%= link_to @most_popular.text[0..199]+'...', article_path(@most_popular), class: 'art-descr' %></span>
+    </div>
 </div>
