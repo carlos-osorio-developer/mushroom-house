@@ -19,7 +19,10 @@ class Article < ApplicationRecord
       .order('COUNT(votes.article_id) desc')
       .first
     else
-      order('created_at desc').first
+      most_recent
     end
   }
+
+  scope :most_recent, -> { order('created_at desc').first }
+
 end
