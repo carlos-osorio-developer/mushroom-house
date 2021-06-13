@@ -8,7 +8,7 @@
               <%= link_to category.name, category_path(category), class: 'cat-title ms-2' %>
           </div>
           <div class="justify-self-end pb-2">
-              <p class="ps-2"><%= link_to @most_popular.title, article_path(@most_popular), class: 'art-title' %></p>              
+              <p class="ps-2"><%= link_to category.articles.most_recent.title, article_path(category.articles.most_recent), class: 'art-title' %></p>              
           </div>
         </div>
       <% end %>
