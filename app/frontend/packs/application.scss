@@ -1,6 +1,17 @@
-// font-family: 'Poppins', sans-serif;
 body {
+    margin-top: 80px !important;
     background-color: #332c29 !important;
+}
+
+nav {  
+    height: 80px;
+}
+
+h1 {
+    padding: 10px 0px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 600;
+    font-size: 22px;    
 }
 
 .header {
@@ -18,10 +29,6 @@ body {
 .social-media svg {
     fill: orangered;
 }
-
-nav {  
-    height: 80px;
-}  
 
 a.nav-link,
 span.nav-link {

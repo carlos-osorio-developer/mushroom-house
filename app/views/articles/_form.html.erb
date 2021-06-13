@@ -12,26 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: 'form-label fs-4' %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text %>
+    <%= form.label :text, class: 'form-label fs-4 mt-2' %>
+    <%= form.text_area :text, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.label :image, class: 'form-label fs-4 mt-2' %>
+    <%= form.file_field :image, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= form.label :category %>
-    <%= form.collection_select :category, Category.all, :id, :cat_name %>
+    <%= form.label :category, "Category: ", class: 'form-label fs-4 mt-3' %>
+    <%= form.collection_select :category, Category.all, :id, :cat_name, {:prompt=>true}, {:class=>'form-select'} %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  
+  <div class="actions btn-group d-flex justify-content-center my-4">
+    <%= form.submit "Create article", class: 'btn btn-success' %>
+    <%= link_to 'Back', root_path, class: 'btn btn-warning' %>
   </div>
 <% end %>
