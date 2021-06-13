@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
-  before_action :logged_in_user, only: [:new]
+  before_action :logged_in_user, only: [:new, :edit, :update]
 
   # GET /articles or /articles.json
   def index
