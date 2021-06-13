@@ -1,25 +1,24 @@
-<p>
-  <strong>Author:</strong>
-  <%= @article.author.name.capitalize %>
-</p>
+<div class="art-box-bg feat-art container-fluid d-flex flex-column justify-content-between" style="height: 250px; background-image: url(<%= rails_blob_url(@article.image) %>),
+            linear-gradient(351deg, rgba(0,0,0,1) 0%, rgba(130,130,130,0.3981967787114846) 30%);"> 
+</div>
+  
+<div class="d-flex flex-column align-items-center container-fluid bg-light">
+  <h2 class="my-4">
+    <%= @article.title %> <span class="fs-4 fst-italic text-muted">by <%= @article.author.name.capitalize %></span>
+  </h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+  <div class="card">
+    <div class="card-body">
+      <%= @article.text %>
+    </div>
+  </div>  
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @article.image %>
-</p>
-
-<%= link_to 'Upvote this article', create_vote_path(article_id: @article.id), method: :post %>
-<br>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+  <div class="actions btn-group d-flex justify-content-center my-4">
+    <div class="btn btn-success">
+    <%= link_to 'Upvote this article', create_vote_path(article_id: @article.id), method: :post, class: 'text-light text-decoration-none' %>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+    </div>
+    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning' %>
+    <%= link_to 'Back', articles_path, class: 'btn btn-danger' %>
+  </div>
+</div>
