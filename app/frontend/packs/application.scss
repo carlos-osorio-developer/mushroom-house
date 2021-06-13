@@ -1,11 +1,31 @@
 // font-family: 'Poppins', sans-serif;
+body {
+    background-color: #332c29 !important;
+}
+
+.header {
+    background-color: #fff;
+}
+
+.footer {    
+    background-color: #4e443f;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: orangered;
+    text-decoration: none;
+}
+
+.social-media svg {
+    fill: orangered;
+}
+
 nav {  
-    height: 80px;  
-    font-family: 'Heebo', sans-serif;
+    height: 80px;
 }  
 
 a.nav-link,
 span.nav-link {
+    font-family: 'Heebo', sans-serif;
     color:rgb(144, 144, 144);
     font-size: 20px;
     font-weight: 400;
@@ -16,7 +36,7 @@ a.nav-link:hover {
 }
 
 .logo {
-    width: 80%;
+    width: 100%;
 }
 
 .art-box-bg {   

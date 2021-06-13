@@ -1,8 +1,11 @@
-<nav class="navbar navbar-expand navbar">
+<nav class="header navbar navbar-expand">
   <div class="container-fluid  d-flex justify-content-between">
-    <%= link_to root_path, class: "", style: "width: 100px" do %>
-      <%= image_tag asset_path("logo.png"), class: "logo" %>
-    <% end %>
+    <div class="d-flex">
+      <%= link_to root_path, class: "", style: "width: 80px" do %>
+        <%= image_tag asset_path("logo.png"), class: "logo" %>
+      <% end %>      
+      <span class="nav-link align-self-center ps-2 fw-bold" style="color: #3a3a3a;">MushroomHouse</span>      
+    </div>
 
     <div class="navbar-start">
       <ul class="navbar-nav">
