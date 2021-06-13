@@ -19,13 +19,12 @@ a.nav-link:hover {
     width: 80%;
 }
 
-.featured-art {   
+.art-box-bg {   
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.8) 100%); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-blend-mode: color-burn;
-    height: 350px;
+    background-blend-mode: color-burn;    
 }
 
 .cat-title {
@@ -50,11 +49,15 @@ a.nav-link:hover {
     font-size: 18px; 
 }
 
-.featured-art .art-title {
+.art-title:hover {
     color: orangered;
 }
 
-.featured-art .art-title:hover {
+.feat-art .art-title {
+    color: orangered;
+}
+
+.feat-art .art-title:hover {
     color: white;
 }
 
