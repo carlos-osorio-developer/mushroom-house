@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   post '/votes/:article_id', to: 'votes#create', as: 'create_vote'
+  get '/search', to: 'articles#search', as: 'search_page'
 end

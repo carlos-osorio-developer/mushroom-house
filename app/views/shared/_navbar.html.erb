@@ -29,15 +29,23 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <span class="nav-link px-0">WELCOME, <%= current_user.name.upcase %>!</span>
+            <span class="nav-link px-0"><%= current_user.name.upcase %>!</span>
           </li>
           <span class="nav-link">|</span>
           <li class="nav-item">
             <%= link_to "LOG OUT", logout_path, class: "nav-link px-0", method: :delete %>
           </li>
         <% end %>
-      </ul>
+        <li class="nav-item">
+          <%= link_to search_page_path, class: 'nav-link' do %>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#909090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <% end %>
+        </li>
+      </ul>      
     </div>
   </div>
   
 </nav>
+
+
+
