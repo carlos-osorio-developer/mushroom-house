@@ -18,12 +18,15 @@ h1 {
     background-color: #fff;
 }
 
-.footer {    
-    background-color: #4e443f;
+.footer {        
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     color: orangered;
     text-decoration: none;
+}
+
+.media-bg {
+    background-color: #4e443f;
 }
 
 .social-media svg {
@@ -76,11 +79,19 @@ a.nav-link:hover {
     font-size: 18px; 
 }
 
-.art-title:hover {
-    color: orangered;
+.grid-art-title {
+    font-family: 'Heebo', sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px; 
+    color: #4e443f;
+    line-height: 1;
 }
 
-.feat-art .art-title {
+.feat-art .art-title,
+.grid-art-title:hover,
+.art-title:hover
+ {
     color: orangered;
 }
 

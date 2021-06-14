@@ -23,6 +23,7 @@ class Article < ApplicationRecord
     end
   }
 
-  scope :most_recent, -> { order('created_at desc').first }
+  scope :descending_order, -> { order('created_at desc') }
+  scope :most_recent, -> { descending_order.first }
 
 end
