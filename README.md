@@ -9,7 +9,7 @@ The purpose of this project is to build a blog App, using RoR, which allows user
 
 ## Live Demo
 
-[Deployed Application]()
+[Deployed Application](https://mysterious-brushlands-81931.herokuapp.com/)
 
 
 ## Getting Started
