@@ -1,114 +1,113 @@
 body {
-    margin-top: 80px !important;
-    background-color: #332c29 !important;
+  margin-top: 80px !important;
+  background-color: #332c29 !important;
 }
 
-nav {  
-    height: 80px;
+nav {
+  height: 80px;
 }
 
 h1 {
-    padding: 10px 0px;
-    font-family: 'Heebo', sans-serif;
-    font-weight: 600;
-    font-size: 22px;    
+  padding: 10px 0;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
 }
 
 .header {
-    background-color: #fff;
+  background-color: #fff;
 }
 
-.footer {        
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: orangered;
-    text-decoration: none;
+.footer {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: orangered;
+  text-decoration: none;
 }
 
 .media-bg {
-    background-color: #4e443f;
+  background-color: #4e443f;
 }
 
 .social-media svg {
-    fill: orangered;
+  fill: orangered;
 }
 
 a.nav-link,
 span.nav-link {
-    font-family: 'Heebo', sans-serif;
-    color:rgb(144, 144, 144);
-    font-size: 20px;
-    font-weight: 400;
+  font-family: 'Heebo', sans-serif;
+  color: rgb(144, 144, 144);
+  font-size: 20px;
+  font-weight: 400;
 }
 
 a.nav-link:hover {
-    color: orangered;
+  color: orangered;
 }
 
 .logo {
-    width: 100%;
+  width: 100%;
 }
 
-.art-box-bg {   
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.8) 100%); 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: color-burn;    
+.art-box-bg {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.8) 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: color-burn;
 }
 
 .cat-title {
-    font-family: 'Heebo', sans-serif;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
-    width: auto;
-    border-bottom: 2px solid yellow;
+  font-family: 'Heebo', sans-serif;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  width: auto;
+  border-bottom: 2px solid yellow;
 }
 
 .cat-title:hover {
-    color: orangered;
+  color: orangered;
 }
 
 .art-title {
-    font-family: 'Heebo', sans-serif;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px; 
+  font-family: 'Heebo', sans-serif;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .grid-art-title {
-    font-family: 'Heebo', sans-serif;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px; 
-    color: #4e443f;
-    line-height: 1;
+  font-family: 'Heebo', sans-serif;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  color: #4e443f;
+  line-height: 1;
 }
 
 .feat-art .art-title,
 .grid-art-title:hover,
-.art-title:hover
- {
-    color: orangered;
+.art-title:hover {
+  color: orangered;
 }
 
 .feat-art .art-title:hover {
-    color: white;
+  color: white;
 }
 
 .art-descr {
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    text-decoration: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  text-decoration: none;
 }
 
 .art-descr:hover {
-    color: gray;
+  color: gray;
 }
 
-// Import Bootstrap v5  
-@import "~bootstrap/scss/bootstrap";  
+// Import Bootstrap v5
+@import "~bootstrap/scss/bootstrap";
