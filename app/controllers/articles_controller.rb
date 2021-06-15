@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
-  before_action :logged_in_user, only: [:new, :edit, :update]
+  before_action :set_article, only: %i[show edit update destroy]
+  before_action :logged_in_user, only: %i[new edit update]
 
   # GET /articles or /articles.json
   def index
@@ -8,8 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   # GET /articles/1 or /articles/1.json
-  def show
-  end
+  def show; end
 
   # GET /articles/new
   def new
@@ -17,8 +16,7 @@ class ArticlesController < ApplicationController
   end
 
   # GET /articles/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /articles or /articles.json
   def create
@@ -27,12 +25,12 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.save
         Listing.create(article_id: @article.id, category_id: article_params[:category])
-        format.html { redirect_to @article, notice: "Article was successfully created." }
+        format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render json: @article.to_json }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @article.errors, status: :unprocessable_entity }
-      end    
+      end
     end
   end
 
@@ -40,7 +38,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params.except(:category))
-        format.html { redirect_to @article, notice: "Article was successfully updated." }
+        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,14 +51,14 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
+      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end  
+  end
 
   def search_results
     if params[:search].blank?
-      redirect_to(search_page_path, alert: "Please enter a valid search") and return  
+      redirect_to(search_page_path, alert: 'Please enter a valid search')
     else
       content = params[:search].downcase
       @results = Article.seach_content(content)
@@ -69,13 +67,14 @@ class ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def article_params
-      params.require(:article).permit(:author_id, :title, :text, :image, :category)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def article_params
+    params.require(:article).permit(:author_id, :title, :text, :image, :category)
+  end
 end

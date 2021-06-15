@@ -3,6 +3,6 @@ class Category < ApplicationRecord
   has_many :articles, through: :listings, dependent: :destroy
 
   def cat_name
-    "#{self.name}"
+    name.to_s
   end
 end

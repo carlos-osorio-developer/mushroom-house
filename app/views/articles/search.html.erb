@@ -9,7 +9,7 @@
         </div>
     <% end %>
 
-    <div class="alert alert-secondary"><%= has_seached?(params[:search]) %></div>
+    <div class="alert alert-secondary"><%= searched?(params[:search]) %></div>
 
     <p class="fs-3"><%= search_results?(@results) %></p>
 

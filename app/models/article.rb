@@ -3,7 +3,7 @@ class Article < ApplicationRecord
 
   has_many :listings, foreign_key: :article_id
   has_many :categories, through: :listings, dependent: :destroy
-  
+
   has_many :votes, dependent: :destroy
 
   validates :title, presence: true, length: { in: 8..100 }
@@ -15,9 +15,9 @@ class Article < ApplicationRecord
   scope :most_popular, lambda {
     if Vote.any?
       joins(:votes)
-      .group(:id)
-      .order('COUNT(votes.article_id) desc')
-      .first
+        .group(:id)
+        .order('COUNT(votes.article_id) desc')
+        .first
     else
       most_recent
     end
@@ -26,8 +26,8 @@ class Article < ApplicationRecord
   scope :descending_order, -> { order('created_at desc') }
   scope :most_recent, -> { descending_order.first }
 
-  scope :seach_content, lambda { |content| 
-                                where('lower(title) LIKE ?', "%#{content}%") 
-                                .or(where('lower(text) LIKE ?', "%#{content}%"))
-                              }
+  scope :seach_content, lambda { |content|
+                          where('lower(title) LIKE ?', "%#{content}%")
+                            .or(where('lower(text) LIKE ?', "%#{content}%"))
+                        }
 end
