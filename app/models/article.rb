@@ -26,4 +26,8 @@ class Article < ApplicationRecord
   scope :descending_order, -> { order('created_at desc') }
   scope :most_recent, -> { descending_order.first }
 
+  scope :seach_content, lambda { |content| 
+                                where('lower(title) LIKE ?', "%#{content}%") 
+                                .or(where('lower(text) LIKE ?', "%#{content}%"))
+                              }
 end

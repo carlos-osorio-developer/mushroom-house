@@ -24,12 +24,15 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params.except(:category))
 
-    if @article.save
-      Listing.create(article_id: @article.id, category_id: article_params[:category])
-      redirect_to @article, notice: "Article was successfully created."      
-    else
-      redirect_to @article, alert: art_created.errors.full_messages[0]
-    end    
+    respond_to do |format|
+      if @article.save
+        Listing.create(article_id: @article.id, category_id: article_params[:category])
+        redirect_to @article, notice: "Article was successfully created."      
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end    
+    end
   end
 
   # PATCH/PUT /articles/1 or /articles/1.json
@@ -52,9 +55,16 @@ class ArticlesController < ApplicationController
       format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
       format.json { head :no_content }
     end
-  end
+  end  
 
-  def search  
+  def search_results
+    if params[:search].blank?
+      redirect_to(search_page_path, alert: "Please enter a valid search") and return  
+    else
+      content = params[:search].downcase
+      @results = Article.seach_content(content)
+      render 'search'
+    end
   end
 
   private

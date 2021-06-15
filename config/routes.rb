@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   post '/votes/:article_id', to: 'votes#create', as: 'create_vote'
   get '/search', to: 'articles#search', as: 'search_page'
+  get '/search_results', to: 'articles#search_results', as: 'search_results'
 end
