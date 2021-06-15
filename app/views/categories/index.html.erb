@@ -1,0 +1,16 @@
+<%= render 'articles/most_voted' %>
+  <div class = "d-flex flex-row">
+    <% @categories.each do |category| %>
+      <% if category.articles.any? %>
+        <div class="flex-shrink-1 art-box-bg d-flex flex-column justify-content-between" style="width: 280px; height: 230px; background-image: url(<%= rails_blob_url(category.articles.most_recent.image) %>),
+            linear-gradient(351deg, rgba(0,0,0,1) 0%, rgba(130,130,130,0.3981967787114846) 30%);"> 
+          <div class="w-auto my-3">
+              <%= link_to category.name, category_path(category), class: 'cat-title ms-2' %>
+          </div>
+          <div class="justify-self-end pb-2">
+              <p class="ps-2"><%= link_to category.articles.most_recent.title, article_path(category.articles.most_recent), class: 'art-title' %></p>              
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>

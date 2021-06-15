@@ -1,0 +1,39 @@
+<% articles = @category.articles.all.descending_order 
+row = return_row
+first_one = articles[2 * row]
+second_one = articles[2 * row + 1] %>
+<div class="row">
+    <div class="col art-box-bg feat-art container-fluid" style="height: 250px; background-image: url(<%= rails_blob_url(first_one.image) %>),
+    linear-gradient(351deg, rgba(0,0,0,1) 0%, rgba(130,130,130,0.3981967787114846) 30%);"></div>
+    <div class="col bg-light d-flex flex-column">
+        <p class="w-auto my-2">
+            <span class="cat-title text-warning text-break"> <%= @category.name %> </span>
+        </p>
+        <h2 class="w-auto grid-art-title mt-2">
+            <%= link_to first_one.title, article_path(first_one), class: 'grid-art-title' %>
+        </h2>
+        <p class="w-auto mt-2">
+            <span class="art-descr text-muted text-break"> <%= first_one.text.split(' ')[0..14].join(' ') + '...' %> </span>
+        </p>
+        <%= link_to 'Read more', article_path(first_one), class: 'art-descr text-warning' %>
+    </div>
+    <% if second_one %>
+    <div class="col art-box-bg feat-art container-fluid" style="height: 250px; background-image: url(<%= rails_blob_url(second_one.image) %>),
+    linear-gradient(351deg, rgba(0,0,0,1) 0%, rgba(130,130,130,0.3981967787114846) 30%);"></div>
+    <div class="col bg-light d-flex flex-column">
+        <p class="w-auto my-2">
+            <span class="cat-title text-warning text-break"> <%= @category.name %> </span>
+        </p>
+        <h2 class="w-auto grid-art-title mt-2">
+            <%= link_to second_one.title, article_path(second_one), class: 'grid-art-title' %>
+        </h2>
+        <p class="w-auto mt-2">
+            <span class="art-descr text-muted text-break"> <%= second_one.text.split(' ')[0..14].join(' ') + '...' %> </span>
+        </p>
+        <%= link_to 'Read more', article_path(second_one), class: 'art-descr text-warning' %>
+    </div>
+    <% else %>
+        <div class="col"></div>
+        <div class="col"></div>
+    <% end %>
+</div>
