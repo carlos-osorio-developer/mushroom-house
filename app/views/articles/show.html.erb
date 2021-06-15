@@ -21,6 +21,6 @@
     <% end %>
     </div>
     <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning' %>
-    <%= link_to 'Back', articles_path, class: 'btn btn-danger' %>
+    <%= link_to 'Back', category_path(@article.categories[0]), class: 'btn btn-danger' %>
   </div>
 </div>
