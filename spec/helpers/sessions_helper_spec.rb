@@ -11,5 +11,16 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe SessionsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "user login" do
+    it "logs a user" do      
+      user = User.create(name: 'NewUser')  
+      expect(helper.log_in(user)).to eq(session[:user_id] = user.id)
+    end
+
+    it "return a string presenting results" do
+      search = 'RandomSearch'
+      expect(helper.has_seached?(search)).to eq("Showing results for: '#{search}'")
+    end
+  end
 end

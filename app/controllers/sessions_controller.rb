@@ -8,8 +8,7 @@ def create
     log_in user
     redirect_back_or root_path
     else
-    flash.now[:danger] = 'Invalid email/password combination'
-    render 'new'
+    redirect_to login_path, alert: "User do not exist"
     end
 end
 
