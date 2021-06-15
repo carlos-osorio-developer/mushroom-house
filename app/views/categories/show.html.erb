@@ -1,7 +1,7 @@
 <h1 class="media-bg text-center py-4 mb-0 text-light">  
   <%= @category.name %>
 </h1>
-<% total_art = @category.articles.all.count %>
+<% total_art = @category.articles.all.count - 1 %>
 <div class="container-fluid" style="min-height:500px">
   <% 0.upto(total_art / 2) do |row| %>
     <%= display_columns(row) %>
