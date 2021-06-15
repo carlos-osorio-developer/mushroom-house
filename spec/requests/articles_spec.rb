@@ -14,6 +14,11 @@
 
 RSpec.describe "/articles", type: :request do
   
+  before :each do
+    User.create(name: 'NewUser')
+    post login_path(:session => {:name => "NewUser"})
+  end
+
   # Article. As you add validations to Article, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
@@ -36,13 +41,6 @@ RSpec.describe "/articles", type: :request do
     it "renders a successful response" do
       article = Article.create! valid_attributes
       get article_url(article)
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET /new" do
-    it "renders a successful response" do
-      get new_article_url
       expect(response).to be_successful
     end
   end

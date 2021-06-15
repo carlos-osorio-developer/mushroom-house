@@ -27,7 +27,8 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.save
         Listing.create(article_id: @article.id, category_id: article_params[:category])
-        redirect_to @article, notice: "Article was successfully created."      
+        format.html { redirect_to @article, notice: "Article was successfully created." }
+        format.json { render json: @article.to_json }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @article.errors, status: :unprocessable_entity }
