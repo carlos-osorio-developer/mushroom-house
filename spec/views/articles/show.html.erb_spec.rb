@@ -10,12 +10,19 @@ RSpec.describe "articles/show", type: :view do
       content_type: 'image/png' 
     ).signed_id
 
-    @article = assign(:article, Article.create!(
+    @category = assign(:category, Category.create!(
+      name: "CategoryName",
+      priority: 1
+    ))
+
+    @categories = Category.all
+
+    @article = @category.articles.create!(
       author_id: User.last.id,
       title: "MyString10",
       text: "MyTextWith_a_StringMoreThan30Chars", 
-      image: image
-    ))
+      image: image,      
+    )
   end
 
   it "renders attributes in <p>" do
