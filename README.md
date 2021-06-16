@@ -45,6 +45,8 @@ To get a local copy up and running follow these simple example steps.
 
 - Run `rails db:migrate` to setup the database
 
+- Run `rspec` to execute the tests
+
 ### Usage
 
 - Run `rails s` and go to `http://localhost:3000/` in your browser.
