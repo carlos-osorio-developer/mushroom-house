@@ -4,7 +4,7 @@ RSpec.feature 'Articles', type: :feature do
   before :each do
     User.create(name: 'newuser')
     file = Rails.root.join('app', 'assets', 'images', 'logo.png')
-    image = ActiveStorage::Blob.create_after_upload!(io: File.open(file, 'rb'),
+    image = ActiveStorage::Blob.create_and_upload!(io: File.open(file, 'rb'),
                                                      filename: 'logo.png',
                                                      content_type: 'image/png').signed_id
 

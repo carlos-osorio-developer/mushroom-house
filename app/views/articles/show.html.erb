@@ -3,9 +3,10 @@
 </div>
   
 <div class="d-flex flex-column align-items-center container-fluid bg-light">
-  <h2 class="my-4">
-    <%= @article.title %> <span class="fs-4 fst-italic text-muted">by <%= @article.author.name.capitalize %></span>
+  <h2 class="mt-4 mb-2">
+    <%= @article.title %> <span class="fs-4 fst-italic text-muted">by <%= @article.author.name.capitalize %></span>    
   </h2>
+  <span class="badge rounded-pill bg-success fs-5 mb-2">Votes: <%= @article.votes.count %></span>
 
   <div class="card">
     <div class="card-body">
