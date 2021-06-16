@@ -1,0 +1,27 @@
+<div class="art-box-bg feat-art container-fluid" style="height: 250px; background-image: url(<%= rails_blob_url(@article.image) %>),
+            linear-gradient(351deg, rgba(0,0,0,1) 0%, rgba(130,130,130,0.3981967787114846) 30%);"> 
+</div>
+  
+<div class="d-flex flex-column align-items-center container-fluid bg-light">
+  <h2 class="mt-4 mb-2">
+    <%= @article.title %> <span class="fs-4 fst-italic text-muted">by <%= @article.author.name.capitalize %></span>    
+  </h2>
+  <span class="badge rounded-pill bg-success fs-5 mb-2">Votes: <%= @article.votes.count %></span>
+
+  <div class="card">
+    <div class="card-body">
+      <%= add_line_breaks(@article.text) %>
+    </div>
+  </div>  
+
+  <div class="actions btn-group d-flex justify-content-center my-4">
+    <div class="btn btn-success">
+    <%= link_to create_vote_path(article_id: @article.id), method: :post, class: 'text-light text-decoration-none' do %>
+      Upvote this article 
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+    <% end %>
+    </div>
+    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning' %>
+    <%= link_to 'Back', category_path(@article.categories[0]), class: 'btn btn-danger' %>
+  </div>
+</div>
