@@ -1,10 +1,10 @@
 <nav class="header navbar navbar-expand fixed-top">
   <div class="container-fluid  d-flex justify-content-between">
     <div class="d-flex">
-      <%= link_to root_path, class: "", style: "width: 80px" do %>
+      <%= link_to root_path, style: "width: 80px" do %>
         <%= image_tag asset_path("logo.png"), class: "logo" %>
       <% end %>      
-      <span class="nav-link align-self-center ps-2 fw-bold" style="color: #3a3a3a;">MushroomHouse</span>      
+      <%= link_to MushroomHouse, root_path, class: 'nav-link align-self-center ps-2 fw-bold', style: 'color: #3a3a3a;' %>      
     </div>
 
     <div class="navbar-start">
