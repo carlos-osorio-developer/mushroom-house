@@ -45,11 +45,16 @@ To get a local copy up and running follow these simple example steps.
 
 - Run `rails db:migrate` to setup the database
 
+- Run `rails db:seed` to populate the database (IMPORTANT)
+
 - Run `rspec` to execute the tests
 
 ### Usage
 
+* Remember to run `rails db:seed` before this
+
 - Run `rails s` and go to `http://localhost:3000/` in your browser.
+
 
 ## Author
 
