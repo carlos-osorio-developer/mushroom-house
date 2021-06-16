@@ -17,14 +17,6 @@
     Category.first.articles.create!(
       author_id: User.last.id,
       title: 'Common Mushroom Substrate Materials',
-      text: "There are a wide range of materials that you can use as a substrate to grow mushrooms. Some are fairly conventional while others are a bit newer and more experimental. Here are some of the most common substrates that mushroom growers are currently using. 
-      
-      Coffee grounds \n 
-      Straw \n
-    Coco Coir and Vermiculite \n 
-    Hardwood Pellets \n 
-    Manure \n 
-    Logs \n 
-    Cardboard",
+      text: "There are a wide range of materials that you can use as a substrate to grow mushrooms. Some are fairly conventional while others are a bit newer and more experimental. Here are some of the most common substrates that mushroom growers are currently using. \n \n Coffee grounds \n Straw \n Coco Coir and Vermiculite \n Hardwood Pellets \n Manure \n Logs \n Cardboard",
       image: image
     )

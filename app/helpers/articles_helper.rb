@@ -19,4 +19,8 @@ module ArticlesHelper
       link_to 'Back', root_path, class: 'btn btn-warning'
     end
   end
+
+  def add_line_breaks(text)
+    simple_format(text)
+  end
 end
