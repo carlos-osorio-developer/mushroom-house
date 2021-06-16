@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :category, "Category: ", class: 'form-label fs-4 mt-3' %>
-    <%= form.collection_select :category, Category.all, :id, :cat_name, {:prompt=>true}, {:class=>'form-select'} %>
+    <%= form.collection_select :category, Category.all, :id, :cat_name, {prompt: true}, {class: 'form-select', required: true} %>
   </div>
   
   <div class="actions btn-group d-flex justify-content-center my-4">
